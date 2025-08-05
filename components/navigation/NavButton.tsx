@@ -50,7 +50,7 @@ export default function NavButton({
           <IconComponent color={iconColor} />
           <View>
             <Text
-              className={`text-xs ${
+              className={`text-xs  ${
                 focused ? "text-purple-300" : "text-gray-500"
               }`}
             >

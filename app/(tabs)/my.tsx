@@ -1,9 +1,9 @@
-import { Text, View } from "react-native";
-
+import { View } from "react-native";
+import { AppText } from "@/components/common/AppText";
 export default function MyScreen() {
   return (
     <View>
-      <Text>MyScreen</Text>
+      <AppText>MyScreen</AppText>
     </View>
   );
 }
