@@ -1,9 +1,10 @@
-import { Pressable, PressableProps, Text, View } from "react-native";
+import { Pressable, PressableProps, View } from "react-native";
 import TicketSVG from "@/assets/svg/TicketSVG.svg";
 import UserSVG from "@/assets/svg/UserSVG.svg";
 import AddSVG from "@/assets/svg/AddSVG.svg";
 import { TabLabel } from "@/types";
 import { usePathname } from "expo-router";
+import { AppText } from "@/components/common/AppText";
 
 const labelIconMap = {
   ticket: TicketSVG,
@@ -49,13 +50,13 @@ export default function NavButton({
         <View className="flex items-center justify-center">
           <IconComponent color={iconColor} />
           <View>
-            <Text
-              className={`text-xs  ${
+            <AppText
+              className={`text-xs font-kbiz-bold  ${
                 focused ? "text-purple-300" : "text-gray-500"
               }`}
             >
               {labelTextMap[label]}
-            </Text>
+            </AppText>
           </View>
         </View>
       </Pressable>
