@@ -5,6 +5,8 @@ import { AppText } from "@/components/common/AppText";
 import MapSVG from "@/assets/svg/MapSVG.svg";
 import CalendarSVG from "@/assets/svg/CalendarSVG.svg";
 
+import { FRAME_WIDTH, BOTTOM_FRAME_HEIGHT } from "@/constants/ticketFrame";
+
 interface IDefaultBottomFrameProps {
   location: string;
   date: string;
@@ -19,11 +21,11 @@ export default function DefaultBottomFrame({
   date,
   frameColor = "#ffffff",
   QRSectionColor = "#9CA3AF",
-  width = 232,
-  height = 170,
+  width = FRAME_WIDTH,
+  height = BOTTOM_FRAME_HEIGHT,
 }: IDefaultBottomFrameProps) {
-  const QR_SECTION_WIDTH = width * (80 / 232);
-  const QR_SECTION_HEIGHT = height * (80 / 170);
+  const QR_SECTION_WIDTH = width * (80 / FRAME_WIDTH);
+  const QR_SECTION_HEIGHT = height * (80 / BOTTOM_FRAME_HEIGHT);
 
   return (
     <View className="items-center justify-center" style={{ width, height }}>
@@ -38,18 +40,18 @@ export default function DefaultBottomFrame({
         <View className="gap-y-1">
           <View className="flex-row gap-x-1 items-start">
             <MapSVG
-              width={width * (20 / 232)}
-              height={height * (20 / 170)}
+              width={width * (20 / FRAME_WIDTH)}
+              height={height * (20 / BOTTOM_FRAME_HEIGHT)}
               style={{ alignSelf: "flex-start" }}
             />
             <AppText
               numberOfLines={2}
               style={{
-                paddingTop: height * (2 / 170),
-                minHeight: height * (40 / 170),
-                maxWidth: width * (100 / 232),
+                paddingTop: height * (2 / BOTTOM_FRAME_HEIGHT),
+                minHeight: height * (40 / BOTTOM_FRAME_HEIGHT),
+                maxWidth: width * (100 / FRAME_WIDTH),
                 textAlignVertical: "top",
-                fontSize: width * (12 / 232),
+                fontSize: width * (12 / FRAME_WIDTH),
               }}
             >
               {location.replace(/\\n/g, "\n")}
@@ -57,17 +59,17 @@ export default function DefaultBottomFrame({
           </View>
           <View className="flex-row gap-x-1 items-center">
             <CalendarSVG
-              width={width * (20 / 232)}
-              height={height * (20 / 170)}
+              width={width * (20 / FRAME_WIDTH)}
+              height={height * (20 / BOTTOM_FRAME_HEIGHT)}
               style={{ alignSelf: "flex-start" }}
             />
             <AppText
               numberOfLines={2}
               style={{
-                paddingTop: height * (2 / 170),
-                fontSize: width * (12 / 232),
-                minHeight: height * (40 / 170),
-                maxWidth: width * (100 / 232),
+                paddingTop: height * (2 / BOTTOM_FRAME_HEIGHT),
+                fontSize: width * (12 / FRAME_WIDTH),
+                minHeight: height * (40 / BOTTOM_FRAME_HEIGHT),
+                maxWidth: width * (100 / FRAME_WIDTH),
                 textAlignVertical: "top",
               }}
             >

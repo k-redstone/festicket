@@ -3,17 +3,24 @@ import DefaultTopFrame from "@/components/ticket/TopFrame/DefaultTopFrame";
 import DefaultBottomFrame from "@/components/ticket/BottomFrame/defaultBottomFrame";
 import DottedLine from "@/components/ticket/DottedLine";
 
+import {
+  FRAME_WIDTH,
+  FRAME_HEIGHT,
+  TOP_FRAME_HEIGHT,
+  BOTTOM_FRAME_HEIGHT,
+} from "@/constants/ticketFrame";
+
 interface IDefaultTicketProps {
   width?: number;
   height?: number;
 }
 
 export default function DefaultTicket({
-  width = 232,
-  height = 508,
+  width = FRAME_WIDTH,
+  height = FRAME_HEIGHT,
 }: IDefaultTicketProps) {
-  const TOP_HEIGHT = height * (338 / 508);
-  const BOTTOM_HEIGHT = height * (170 / 508);
+  const TOP_HEIGHT = height * (TOP_FRAME_HEIGHT / FRAME_HEIGHT);
+  const BOTTOM_HEIGHT = height * (BOTTOM_FRAME_HEIGHT / FRAME_HEIGHT);
 
   return (
     <View className="px-4 py-6 bg-black">

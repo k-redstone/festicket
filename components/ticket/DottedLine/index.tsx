@@ -1,4 +1,5 @@
 import Svg, { Line } from "react-native-svg";
+import { FRAME_WIDTH, DOTTED_LINE_WIDTH } from "@/constants/ticketFrame";
 
 interface IDottedLineProps {
   lineColor?: string;
@@ -7,17 +8,17 @@ interface IDottedLineProps {
 }
 
 export default function DottedLine({
-  width = 205,
+  width = DOTTED_LINE_WIDTH,
   height = 8,
   lineColor = "#fca5a5",
 }: IDottedLineProps) {
-  const dashLength = width * (8 / 205);
-  const gapLength = width * (6 / 205);
+  const dashLength = width * (8 / DOTTED_LINE_WIDTH);
+  const gapLength = width * (6 / DOTTED_LINE_WIDTH);
   const strokeWidth = height * (4 / 8);
   return (
     <Svg
       height={height}
-      width={width * (205 / 232)}
+      width={width * (DOTTED_LINE_WIDTH / FRAME_WIDTH)}
       style={{ marginVertical: -5 }}
     >
       <Line
