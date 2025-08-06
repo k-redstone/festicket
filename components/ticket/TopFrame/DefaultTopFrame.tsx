@@ -22,7 +22,7 @@ export default function DefaultTopFrame({
   height = TOP_FRAME_HEIGHT,
 }: IDefaultTopFrameProps) {
   const IMAGE_SECTION_WIDTH = width * (156 / FRAME_WIDTH);
-  const IMAGE_SECTION_HEIGHT = height * (212 / TOP_FRAME_HEIGHT);
+  const IMAGE_SECTION_HEIGHT = height * ((156 * 5) / 4 / TOP_FRAME_HEIGHT);
 
   return (
     <View

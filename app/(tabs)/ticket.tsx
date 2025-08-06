@@ -8,8 +8,8 @@ export default function TicketScreen() {
     <SafeAreaView>
       <View className="gap-y-2 items-center">
         <AppText className=" text-gray-300">TicketScreen</AppText>
-        <DefaultTicket width={146} height={313} />
         <DefaultTicket />
+        <DefaultTicket width={146} height={313} />
         <DefaultTicket />
         <AppText className=" text-gray-300">TicketScreen</AppText>
       </View>
