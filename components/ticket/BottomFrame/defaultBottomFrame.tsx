@@ -12,6 +12,8 @@ interface IDefaultBottomFrameProps {
   date: string;
   frameColor?: string;
   QRSectionColor?: string;
+  locationTxtColor?: string;
+  dateTxtColor?: string;
   width?: number;
   height?: number;
 }
@@ -20,6 +22,8 @@ export default function DefaultBottomFrame({
   location,
   date,
   frameColor = "#ffffff",
+  locationTxtColor = "#ffffff",
+  dateTxtColor = "#ffffff",
   QRSectionColor = "#9CA3AF",
   width = FRAME_WIDTH,
   height = BOTTOM_FRAME_HEIGHT,
@@ -40,6 +44,7 @@ export default function DefaultBottomFrame({
         <View className="gap-y-1">
           <View className="flex-row gap-x-1 items-start">
             <MapSVG
+              color={locationTxtColor}
               width={width * (20 / FRAME_WIDTH)}
               height={height * (20 / BOTTOM_FRAME_HEIGHT)}
               style={{ alignSelf: "flex-start" }}
@@ -47,6 +52,7 @@ export default function DefaultBottomFrame({
             <AppText
               numberOfLines={2}
               style={{
+                color: locationTxtColor,
                 paddingTop: height * (2 / BOTTOM_FRAME_HEIGHT),
                 minHeight: height * (40 / BOTTOM_FRAME_HEIGHT),
                 maxWidth: width * (100 / FRAME_WIDTH),
@@ -59,6 +65,7 @@ export default function DefaultBottomFrame({
           </View>
           <View className="flex-row gap-x-1 items-center">
             <CalendarSVG
+              color={dateTxtColor}
               width={width * (20 / FRAME_WIDTH)}
               height={height * (20 / BOTTOM_FRAME_HEIGHT)}
               style={{ alignSelf: "flex-start" }}
@@ -66,6 +73,7 @@ export default function DefaultBottomFrame({
             <AppText
               numberOfLines={2}
               style={{
+                color: dateTxtColor,
                 paddingTop: height * (2 / BOTTOM_FRAME_HEIGHT),
                 fontSize: width * (12 / FRAME_WIDTH),
                 minHeight: height * (40 / BOTTOM_FRAME_HEIGHT),

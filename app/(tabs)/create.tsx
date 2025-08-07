@@ -1,9 +1,12 @@
-import { View } from "react-native";
-import { AppText } from "@/components/common/AppText";
+import { useRouter } from "expo-router";
+import { useEffect } from "react";
+
 export default function CreateScreen() {
-  return (
-    <View>
-      <AppText>CreateScreen</AppText>
-    </View>
-  );
+  const router = useRouter();
+
+  useEffect(() => {
+    router.replace("/tickets/create/CreateTicketFunnel");
+  }, []);
+
+  return null;
 }
