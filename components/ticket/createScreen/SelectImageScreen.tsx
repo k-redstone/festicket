@@ -6,8 +6,6 @@ import { useState } from "react";
 
 import PrimaryButton from "@/components/common/PrimaryButton";
 import { AppText } from "@/components/common/AppText";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
-
 import { Dimensions } from "react-native";
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
@@ -15,12 +13,15 @@ const IMAGE_WIDTH = SCREEN_WIDTH;
 const IMAGE_HEIGHT = (SCREEN_WIDTH * 5) / 4;
 
 interface ISelectImageScreenProps {
-  onNext: (value: string) => void;
+  onNext: (value: { uri: string; width: number; height: number }) => void;
 }
 
 export default function SelectImageScreen({ onNext }: ISelectImageScreenProps) {
-  const [image, setImage] = useState<string | null>(null);
-  const insets = useSafeAreaInsets();
+  const [image, setImage] = useState<{
+    uri: string;
+    width: number;
+    height: number;
+  } | null>(null);
 
   const requestPermission = async (): Promise<boolean> => {
     const { status, canAskAgain } =
@@ -69,14 +70,18 @@ export default function SelectImageScreen({ onNext }: ISelectImageScreenProps) {
     // 이미지 선택
     const result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: "images",
-      allowsEditing: false,
-      aspect: [4, 5],
       quality: 1,
       selectionLimit: 1,
+      exif: true,
     });
-
     if (!result.canceled) {
-      setImage(result.assets[0].uri);
+      const selected = result.assets[0];
+
+      setImage({
+        uri: selected.uri,
+        width: selected.width,
+        height: selected.height,
+      });
     }
   };
 
@@ -117,7 +122,7 @@ export default function SelectImageScreen({ onNext }: ISelectImageScreenProps) {
         >
           {image && (
             <Image
-              source={{ uri: image }}
+              source={{ uri: image.uri }}
               style={{
                 width: "100%",
                 height: "100%",

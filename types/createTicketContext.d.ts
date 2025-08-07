@@ -1,5 +1,5 @@
 export type TSelectImageURIInput = {
-  originImageUri?: string;
+  originImage?: { uri: string; width: number; height: number };
   editImage?: string;
   titleColor?: string;
   frameColor?: string;
@@ -12,7 +12,7 @@ export type TSelectImageURIInput = {
 };
 
 export type TEditImageInput = {
-  originImageUri: string;
+  originImage: { uri: string; width: number; height: number };
   editImage?: string;
   titleColor?: string;
   frameColor?: string;
@@ -25,7 +25,7 @@ export type TEditImageInput = {
 };
 
 export type TTicketInfoInput = {
-  originImageUri: string;
+  originImage: { uri: string; width: number; height: number };
   editImage: string;
   titleColor?: string;
   frameColor?: string;

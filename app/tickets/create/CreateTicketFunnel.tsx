@@ -17,8 +17,8 @@ export default function CreateTicketFunnel() {
       <funnel.Render
         SelectImage={({ context, history }) => (
           <SelectImageScreen
-            onNext={(originImageUri) =>
-              history.push("EditImage", { ...context, originImageUri })
+            onNext={(originImage) =>
+              history.push("EditImage", { ...context, originImage })
             }
           />
         )}
@@ -28,11 +28,14 @@ export default function CreateTicketFunnel() {
             onNext={(editImage) =>
               history.push("TicketInfo", { ...context, editImage })
             }
-            onBack={() => history.back()}
+            onBack={() => history.push("SelectImage")}
           />
         )}
         TicketInfo={({ context, history }) => (
-          <TicketInfoScreen context={context} onBack={() => history.back()} />
+          <TicketInfoScreen
+            context={context}
+            onBack={() => history.push("EditImage")}
+          />
         )}
       />
     </SafeAreaView>
