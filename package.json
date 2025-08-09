@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^14.1.0",
+    "@gorhom/bottom-sheet": "^5.1.8",
     "@react-native-community/datetimepicker": "^8.4.4",
     "@react-navigation/native": "^7.1.6",
     "@use-funnel/react-navigation-native": "^0.0.15",
@@ -38,7 +39,8 @@
     "react-native-safe-area-context": "5.4.0",
     "react-native-screens": "~4.11.1",
     "react-native-svg": "15.11.2",
-    "react-native-web": "~0.20.0"
+    "react-native-web": "~0.20.0",
+    "reanimated-color-picker": "^4.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
