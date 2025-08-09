@@ -8,9 +8,13 @@ export default function TicketScreen() {
     <SafeAreaView>
       <View className="gap-y-2 items-center">
         <AppText className=" text-gray-300">TicketScreen</AppText>
-        <DefaultTicket />
-        <DefaultTicket width={146} height={313} />
-        <DefaultTicket />
+        <DefaultTicket ticket={{ top: { title: "hi" } }} />
+        <DefaultTicket
+          ticket={{ top: { title: "hi" } }}
+          width={146}
+          height={313}
+        />
+        <DefaultTicket ticket={{ top: { title: "hi" } }} />
         <AppText className=" text-gray-300">TicketScreen</AppText>
       </View>
     </SafeAreaView>

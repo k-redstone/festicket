@@ -8,8 +8,9 @@ import CalendarSVG from "@/assets/svg/CalendarSVG.svg";
 import { FRAME_WIDTH, BOTTOM_FRAME_HEIGHT } from "@/constants/ticketFrame";
 
 interface IDefaultBottomFrameProps {
-  location: string;
-  date: string;
+  location?: string;
+  startDate?: string;
+  endDate?: string;
   frameColor?: string;
   QRSectionColor?: string;
   locationTxtColor?: string;
@@ -19,11 +20,12 @@ interface IDefaultBottomFrameProps {
 }
 
 export default function DefaultBottomFrame({
-  location,
-  date,
+  location = "",
+  startDate = "",
+  endDate = "",
   frameColor = "#ffffff",
-  locationTxtColor = "#ffffff",
-  dateTxtColor = "#ffffff",
+  locationTxtColor = "#000000",
+  dateTxtColor = "#000000",
   QRSectionColor = "#9CA3AF",
   width = FRAME_WIDTH,
   height = BOTTOM_FRAME_HEIGHT,
@@ -55,12 +57,12 @@ export default function DefaultBottomFrame({
                 color: locationTxtColor,
                 paddingTop: height * (2 / BOTTOM_FRAME_HEIGHT),
                 minHeight: height * (40 / BOTTOM_FRAME_HEIGHT),
-                maxWidth: width * (100 / FRAME_WIDTH),
+                maxWidth: width * (85 / FRAME_WIDTH),
                 textAlignVertical: "top",
                 fontSize: width * (12 / FRAME_WIDTH),
               }}
             >
-              {location.replace(/\\n/g, "\n")}
+              {location.replace(/\(br\)/g, "\n")}
             </AppText>
           </View>
           <View className="flex-row gap-x-1 items-center">
@@ -81,7 +83,7 @@ export default function DefaultBottomFrame({
                 textAlignVertical: "top",
               }}
             >
-              {date.replace(/\\n/g, "\n")}
+              {endDate ? `${startDate}\n~ ${endDate}` : `${startDate}`}
             </AppText>
           </View>
         </View>
