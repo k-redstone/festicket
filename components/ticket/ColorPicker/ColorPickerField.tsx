@@ -6,9 +6,9 @@ import {
   ColorPickerBottomSheet,
   ColorPickerBottomSheetHandle,
 } from "@/components/ticket/ColorPicker/ColorPickerBottomSheet";
-type Hex = `#${string}`;
+import type { HexColor } from "@/types/createTicketContext";
 
-const DEFAULT_PALETTE: Readonly<Hex[]> = [
+const DEFAULT_PALETTE: Readonly<HexColor[]> = [
   "#FF5733",
   "#FFC300",
   "#28A745",
@@ -19,9 +19,9 @@ const DEFAULT_PALETTE: Readonly<Hex[]> = [
 
 export type ColorPickerFieldProps = {
   label?: string;
-  value: Hex;
-  onChange: (hex: Hex) => void;
-  palette?: Readonly<Hex[]>;
+  value: HexColor;
+  onChange: (hex: HexColor) => void;
+  palette?: Readonly<HexColor[]>;
   disabled?: boolean;
 };
 
@@ -30,7 +30,7 @@ const Swatch = ({
   selected,
   onPress,
 }: {
-  color: Hex;
+  color: HexColor;
   selected?: boolean;
   onPress: () => void;
 }) => (
