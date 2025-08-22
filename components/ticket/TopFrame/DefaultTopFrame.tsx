@@ -10,7 +10,7 @@ interface IDefaultTopFrameProps {
   height?: number;
   titleColor?: string;
   imageSectionBorderColor?: string;
-  frameColor?: string;
+  topFrameColor?: string;
   imageUri?: string | null;
 }
 
@@ -18,7 +18,7 @@ export default function DefaultTopFrame({
   title = "",
   titleColor = "#000000",
   imageSectionBorderColor = "#000000",
-  frameColor = "#ffffff",
+  topFrameColor = "#ffffff",
   width = FRAME_WIDTH,
   height = TOP_FRAME_HEIGHT,
   imageUri = null,
@@ -37,7 +37,7 @@ export default function DefaultTopFrame({
       <DefaultTopFrameSVG
         width={width}
         height={height}
-        color={frameColor}
+        color={topFrameColor}
         style={StyleSheet.absoluteFill}
       />
 

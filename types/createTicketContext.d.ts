@@ -8,7 +8,8 @@ export interface IImageRef {
 
 export interface ITicketPalette {
   titleColor?: HexColor;
-  frameColor?: HexColor;
+  bottomFrameColor?: HexColor;
+  topFrameColor?: HexColor;
   imageSectionBorderColor?: HexColor;
   QRSectionColor?: HexColor;
   locationTxtColor?: HexColor;
@@ -62,7 +63,7 @@ export interface ITicketFrameTopData
     | "title"
     | "titleColor"
     | "imageSectionBorderColor"
-    | "frameColor"
+    | "topFrameColor"
     | "imageUri"
   > {}
 
@@ -74,7 +75,7 @@ export interface ITicketFrameBottomData
     | "location"
     | "startDate"
     | "endDate"
-    | "frameColor"
+    | "bottomFrameColor"
     | "QRSectionColor"
     | "locationTxtColor"
     | "dateTxtColor"

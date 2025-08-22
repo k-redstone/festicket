@@ -11,7 +11,7 @@ interface IDefaultBottomFrameProps {
   location?: string;
   startDate?: string;
   endDate?: string;
-  frameColor?: string;
+  bottomFrameColor?: string;
   QRSectionColor?: string;
   locationTxtColor?: string;
   dateTxtColor?: string;
@@ -23,7 +23,7 @@ export default function DefaultBottomFrame({
   location = "",
   startDate = "",
   endDate = "",
-  frameColor = "#ffffff",
+  bottomFrameColor = "#ffffff",
   locationTxtColor = "#000000",
   dateTxtColor = "#000000",
   QRSectionColor = "#9CA3AF",
@@ -38,7 +38,7 @@ export default function DefaultBottomFrame({
       <DefaultBottomFrameSVG
         width={width}
         height={height}
-        color={frameColor}
+        color={bottomFrameColor}
         style={StyleSheet.absoluteFill}
       />
       <View className="items-center absolute w-full h-full px-3 gap-x-1 flex-row justify-between">

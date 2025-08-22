@@ -26,7 +26,7 @@ export default function DefaultTicket({
   const BOTTOM_HEIGHT = height * (BOTTOM_FRAME_HEIGHT / FRAME_HEIGHT);
 
   return (
-    <View className="p-5 bg-black">
+    <View className="p-5  rounded-md">
       <View className="items-center relative">
         {/* 상단 프레임 */}
         <DefaultTopFrame {...ticket.top} width={width} height={TOP_HEIGHT} />
